@@ -10,9 +10,6 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 
-/**
- * Created by filipp on 6/16/2016.
- */
 public class GpsInfo extends Service {
 
     private LocationListener listener;
