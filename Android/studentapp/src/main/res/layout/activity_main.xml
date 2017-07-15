@@ -11,7 +11,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Start Service" />
+        android:text="SMS 전송" />
 
     <Button
         android:id="@+id/button2"
@@ -42,14 +42,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="none"
                 />
         </ScrollView>
 
-        <TextView
-            android:id="@+id/smsNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
 
     </LinearLayout>
 
