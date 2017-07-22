@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
     //화면 세팅
     private Button sms_send;
-    private TextView textView;
     private LocationManager locationManager;
     private LocationListener listener;
     private String location_check = null;
+    private String location1 = null;
 
     //버튼 및 글 생성
     @Override
@@ -41,14 +41,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sms_send = (Button) findViewById(R.id.button);
-        textView = (TextView) findViewById(R.id.textView);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                textView.setText("좌표 " + location.getLongitude() + " " + location.getLatitude() + "조난당하였습니다 도와주세요");
+                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "조난당하였습니다 도와주세요";
             }
 
             @Override
@@ -87,11 +86,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String location = textView.getText().toString();
-                if(location!= null)
+                if(location1!= null)
                 {
-                    location_check = location;
-                    sendSMS("01050411987", location);
+                    location_check = location1;
+                    sendSMS("01050411987", location1);
                 }
                 else
                 {
