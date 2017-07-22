@@ -8,6 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -16,16 +19,17 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+import java.util.List;
+import java.util.Locale;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity{
 
     //화면 세팅
     private Button sms_send;
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private LocationListener listener;
     private String location_check = null;
     private String location1 = null;
+    private String address_1= null;
 
     //버튼 및 글 생성
     @Override
@@ -43,11 +48,24 @@ public class MainActivity extends AppCompatActivity {
         sms_send = (Button) findViewById(R.id.button);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        Criteria c = new Criteria();
+        address_1 = locationManager.getBestProvider(c, true);
+        if(address_1 == null || !locationManager.isProviderEnabled(address_1)){
+            List<String> list = locationManager.getAllProviders();
+
+            for(int i=0; i<list.size(); i++){
+                String temp = list.get(i);
+                if(locationManager.isProviderEnabled(temp)){
+                    address_1 = temp;
+                    break;
+                }
+            }
+        }
 
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "조난당하였습니다 도와주세요";
+                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "\n" + getAddress(location.getLatitude(), location.getLongitude()) + "\n조난당하였습니다 도와주세요";
             }
 
             @Override
@@ -109,6 +127,30 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    public String getAddress(double lat, double lng){
+        String address = null;
+
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+        List<Address> list = null;
+
+        try{
+            list = geocoder.getFromLocation(lat, lng, 1);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        if(list == null){
+            Log.e("getAddress", "주소 데이터 얻기 실패");
+            return null;
+        }
+        if(list.size()>0){
+            Address addr = list.get(0);
+            address = addr.getCountryName() + " " + addr.getPostalCode() + " " + addr.getLocality() + " " + addr.getThoroughfare() + " " + addr.getFeatureName();
+        }
+        return address;
     }
 
     //문자 전송

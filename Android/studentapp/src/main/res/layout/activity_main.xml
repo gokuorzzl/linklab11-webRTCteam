@@ -14,30 +14,4 @@
         android:text="SMS 전송" />
 
 
-    <!--<LinearLayout-->
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <!--<ScrollView-->
-            android:id="@+id/scrollView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:clickable="true"
-            android:foregroundGravity="top|right">
-
-            <!--<TextView-->
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-        <!--</ScrollView>-->
-
-
-    <!--</LinearLayout>-->
-
 </RelativeLayout>
