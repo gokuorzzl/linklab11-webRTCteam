@@ -13,14 +13,9 @@ import java.util.List;
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private String[] mDataset;
-    List<Chat> mChat;
+    List<RecordingMessage> mRecordingMessage;
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         public TextView mTextView;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -28,16 +23,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Chat> mChat) {
-        this.mChat = mChat;
+    public MyAdapter(List<RecordingMessage> mRecordingMessage) {
+        this.mRecordingMessage = mRecordingMessage;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
-        // create a new view
+    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.my_text_view, parent, false);
 
@@ -45,18 +36,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.mTextView.setText(mChat.get(position).getText()); // position 설정을 위해서는 getter 설정이 필요 (마우스 우클릭 -> Generate)
-
+        holder.mTextView.setText(mRecordingMessage.get(position).getText()); // position 설정을 위해서는 getter 설정이 필요 (마우스 우클릭 -> Generate)
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mChat.size();
+        return mRecordingMessage.size();
     }
+
 }

@@ -4,14 +4,14 @@ package com.example.kimminyoung.newfirebasetest;
  * Created by KimMinYoung on 2017-07-23.
  */
 
-public class Chat {
+public class RecordingMessage {
     public String recordText;
 
-    public Chat() {
+    public RecordingMessage() {
 
     }
 
-    public Chat(String text) {
+    public RecordingMessage(String text) {
         this.recordText = text;
     }
 
