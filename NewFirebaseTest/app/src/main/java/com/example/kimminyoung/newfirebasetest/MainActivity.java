@@ -1,3 +1,10 @@
+// firebase 일종의 디비같은거고
+// no sql, DB에 바로넣으면 바로바로 갱신됨.
+// 민영이의 파베
+
+// 처음 등록시 패키지명으로 등록하고
+// 지금은 TEST용으로 
+
 package com.example.kimminyoung.newfirebasetest;
 
 import android.os.Bundle;
