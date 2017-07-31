@@ -11,10 +11,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by KimMinYoung on 2017-07-23.
- */
-
 public class MyAdapter2_Alert extends RecyclerView.Adapter<MyAdapter2_Alert.ViewHolder> {
     List<AlertMessage> mAlertMessage;
 
