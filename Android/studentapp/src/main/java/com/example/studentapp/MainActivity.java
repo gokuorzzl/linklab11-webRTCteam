@@ -3,6 +3,7 @@ package com.example.studentapp;
 import android.Manifest;
 import android.app.Activity;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -16,15 +17,24 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.Settings;
+import android.speech.RecognitionListener;
+import android.speech.RecognizerIntent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -38,6 +48,10 @@ public class MainActivity extends Activity{
     private String location_check = null;
     private String location1 = null;
     private String address_1= null;
+    private static final int RESULT_SPEECH =1;
+    private Intent o;
+    private TextView tv;
+    private ImageButton bt;
 
     //버튼 및 글 생성
     @Override
@@ -45,6 +59,35 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Snackbar.make(view,"Replace with your own action", Snackbar.LENGTH_LONG).show();
+            }
+        });
+        tv = (TextView) findViewById(R.id.textView);
+        bt=(ImageButton)findViewById(R.id.button2);
+        user_bt=(ImageButton) findViewById(R.id.user_button);
+
+        bt.setOnClickListener(new View.OnClickListener(){
+          @Override
+            public void onClick(View v){
+              if(v.getId()==R.id.button2){
+                  o = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                  o.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
+                  o.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ko-KR");
+                  o.putExtra(RecognizerIntent.EXTRA_PROMPT, "말해주세요");
+                  Toast.makeText(MainActivity.this, "start speak", Toast.LENGTH_SHORT).show();
+                  try{
+                      startActivityForResult(i, RESULT_SPEECH);
+                  }catch(ActivityNotFoundException e){
+                      Toast.makeText(getApplicationContext(), "Speech To Text를 지원하지 않습니다.", Toast.LENGTH_SHORT).show();
+                      e.getStackTrace();
+                  }
+              }
+          }
+        });
         sms_send = (Button) findViewById(R.id.button);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -84,6 +127,7 @@ public class MainActivity extends Activity{
                 startActivity(i);
             }
         };
+
 
         enable_buttons();
     }
@@ -216,5 +260,13 @@ public class MainActivity extends Activity{
         // sms를 보낸다.
         sms.sendTextMessage(phoneNumber, null, message, sentPI, deliveredPI);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && (requestCode == RESULT_SPEECH)){
+            ArrayList<String> sstResult = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+        }
     }
 }
