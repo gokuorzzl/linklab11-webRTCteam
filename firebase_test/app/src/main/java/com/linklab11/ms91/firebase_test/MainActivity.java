@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     FirebaseDatabase database;
-    List<RecordingMessage> mRecordingMessage, mRecordingMessage2;
+    List<RecordingMessage> mRecordingMessage;
+    List<RecordingMessage2> mRecordingMessage2;
 
     boolean isChannelStarted = false;       // send 버튼을 누를 때의 시점과 onChildAdded가 호출되는 시점이 일치하지가 않아 순차적 실행을 하기 위한 flag
 
@@ -115,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView2.setLayoutManager(mLayoutManager2);         // RecyclerView의 id, layout, size 설정
 
         // 긴급알람
-        mRecordingMessage2 = new ArrayList<>();          // 데이터(메시지)를 담기 위한 ArrayList
-        mAdapter2 = new MyAdapter2(mRecordingMessage2);    // Adapter와 List 연동
-        mRecyclerView2.setAdapter(mAdapter2);             // RecylerView에 Adapter 설정
+        mRecordingMessage2 = new ArrayList<>();
+        mAdapter2 = new MyAdapter2(mRecordingMessage2);
+        mRecyclerView2.setAdapter(mAdapter2);
 
         DatabaseReference chatDBref = database.getReference("Recording Message");
         chatDBref.addChildEventListener(new ChildEventListener() {
