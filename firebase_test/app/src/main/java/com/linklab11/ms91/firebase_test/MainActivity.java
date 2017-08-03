@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
                 // 진동세기 표시는 따로없기때문에, 보통 패턴을 이용하여 진동세기를 표현한다.
                 // LG나 삼성폰의 경우는 따로 API를 이용하는 것 같다고 함.
                 vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-//                Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
-                long[] pattern = {100, 300, 100, 700, 300, 2000};
-                // 짝수 : 대기시간, 홀수 : 진동시간
+                Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
+                long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
+                //홀수 : 진동시간,  짝수 : 대기시간,
 
                 if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
                     Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
