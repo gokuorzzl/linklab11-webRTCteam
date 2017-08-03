@@ -8,12 +8,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.linklab11.ms91.firebase_test.MainActivity">
 
-    <Button
-        android:id="@+id/btnStartChannel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="RESTART" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancelVibe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel_Vibe" />
+        <Button
+            android:id="@+id/btnStartChannel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="RESTART" />
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
@@ -38,11 +48,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="send" />
-
     </LinearLayout>
-    <Button
-        android:id="@+id/cancelVibe"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancel_Vibe" />
+        android:scrollbars="vertical" >
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etText2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSend2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alert send" />
+    </LinearLayout>
+
+
 </LinearLayout>
