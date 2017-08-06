@@ -11,12 +11,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by KimMinYoung on 2017-07-23.
- */
-
-public class MyAdapter2_Alert extends RecyclerView.Adapter<MyAdapter2_Alert.ViewHolder> {
-    List<AlertMessage> mAlertMessage;
+public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.ViewHolder> {
+    List<RecordingMessage2> mRecordingMessage2;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView;
@@ -26,12 +22,12 @@ public class MyAdapter2_Alert extends RecyclerView.Adapter<MyAdapter2_Alert.View
         }
     }
 
-    public MyAdapter2_Alert(List<AlertMessage> mAlertMessage) {
-        this.mAlertMessage = mAlertMessage;
+    public MyAdapter2(List<RecordingMessage2> mRecordingMessage2) {
+        this.mRecordingMessage2 = mRecordingMessage2;
     }
 
     @Override
-    public MyAdapter2_Alert.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyAdapter2.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.my_text_view, parent, false);
 
@@ -41,12 +37,12 @@ public class MyAdapter2_Alert extends RecyclerView.Adapter<MyAdapter2_Alert.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextView.setText(mAlertMessage.get(position).getText()); // position 설정을 위해서는 getter 설정이 필요 (마우스 우클릭 -> Generate)
+        holder.mTextView.setText(mRecordingMessage2.get(position).getText()); // position 설정을 위해서는 getter 설정이 필요 (마우스 우클릭 -> Generate)
     }
 
     @Override
     public int getItemCount() {
-        return mAlertMessage.size();
+        return mRecordingMessage2.size();
     }
 
 }

@@ -8,7 +8,6 @@ public class RecordingMessage {
     public String recordText;
 
     public RecordingMessage() {
-
     }
 
     public RecordingMessage(String text) {

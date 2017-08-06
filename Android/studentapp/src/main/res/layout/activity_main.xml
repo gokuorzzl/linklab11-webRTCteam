@@ -13,5 +13,12 @@
         android:layout_alignParentStart="true"
         android:text="SMS 전송" />
 
+    <TextView
+        android:id="@+id/fab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="n"
+        />
+
 
 </RelativeLayout>
