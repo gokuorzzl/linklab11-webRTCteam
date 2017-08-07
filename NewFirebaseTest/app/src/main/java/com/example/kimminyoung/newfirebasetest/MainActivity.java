@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     TextToSpeech translatedTTS;
     Vibrator vib;
 
-    String recordLanguage = "ko-KR", translateLanguage = "en";
+    String recordLanguage = "ko-KR", translateLanguage = "en", TTSLanguage = "ENGLISH";
     String recordText = "", translationText;
 
     Intent recordIntent;
@@ -113,7 +113,14 @@ public class MainActivity extends AppCompatActivity {
     private TextToSpeech.OnInitListener listenerTTS =  new TextToSpeech.OnInitListener() {
         public void onInit(int status){
             if(status != TextToSpeech.ERROR) {
-                translatedTTS.setLanguage(Locale.ENGLISH);
+                if (TTSLanguage == "ENGLISH")
+                    translatedTTS.setLanguage(Locale.ENGLISH);
+                else if (TTSLanguage == "KOREAN")
+                    translatedTTS.setLanguage(Locale.KOREAN);
+                else if (TTSLanguage == "JAPANESE")
+                    translatedTTS.setLanguage(Locale.JAPANESE);
+                else if (TTSLanguage == "CHINESE")
+                    translatedTTS.setLanguage(Locale.CHINESE);
             }
         }
     };
@@ -336,21 +343,25 @@ public class MainActivity extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.korean:
                             translateLanguage = "ko";
+                            TTSLanguage = "KOREAN";
                             btnTranlateLanguage.setText("수신언어: 한국어");
                             break;
 
                         case R.id.english:
                             translateLanguage = "en";
+                            TTSLanguage = "ENGLISH";
                             btnTranlateLanguage.setText("수신언어: 영어");
                             break;
 
                         case R.id.japanish:
                             translateLanguage = "ja";
+                            TTSLanguage = "JAPANESE";
                             btnTranlateLanguage.setText("수신언어: 일본어");
                             break;
 
                         case R.id.chinese:
                             translateLanguage = "zh";
+                            TTSLanguage = "CHINESE";
                             btnTranlateLanguage.setText("수신언어: 중국어");
                             break;
                     }
