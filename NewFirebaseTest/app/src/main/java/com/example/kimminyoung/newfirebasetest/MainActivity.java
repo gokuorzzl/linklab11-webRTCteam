@@ -7,7 +7,6 @@
 
 package com.example.kimminyoung.newfirebasetest;
 
-import android.*;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -412,24 +411,28 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.korean:
                             translateLanguage = "ko";
                             TTSLanguage = "KOREAN";
+                            translatedTTS.setLanguage(Locale.KOREAN);
                             btnTranlateLanguage.setText("수신언어: 한국어");
                             break;
 
                         case R.id.english:
                             translateLanguage = "en";
                             TTSLanguage = "ENGLISH";
+                            translatedTTS.setLanguage(Locale.ENGLISH);
                             btnTranlateLanguage.setText("수신언어: 영어");
                             break;
 
                         case R.id.japanish:
                             translateLanguage = "ja";
                             TTSLanguage = "JAPANESE";
+                            translatedTTS.setLanguage(Locale.JAPANESE);
                             btnTranlateLanguage.setText("수신언어: 일본어");
                             break;
 
                         case R.id.chinese:
                             translateLanguage = "zh";
                             TTSLanguage = "CHINESE";
+                            translatedTTS.setLanguage(Locale.CHINESE);
                             btnTranlateLanguage.setText("수신언어: 중국어");
                             break;
                     }
