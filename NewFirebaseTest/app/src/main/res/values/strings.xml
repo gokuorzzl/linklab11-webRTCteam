@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NewFirebaseTest</string>
+    <string name="language_receiver">Settings</string>
 </resources>
