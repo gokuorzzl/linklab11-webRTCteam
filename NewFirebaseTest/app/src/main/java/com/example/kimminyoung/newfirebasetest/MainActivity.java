@@ -69,7 +69,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     //gps문자전송
-    private Button sms_send;
     private LocationManager locationManager;
     private LocationListener listener;
     private String address_1= null;
@@ -187,6 +186,15 @@ public class MainActivity extends AppCompatActivity {
             mResult.toArray(rs);
             recordTextView.setText("" + rs[0]);
             recordText = "" + rs[0];
+            if(recordText.contains("119")!= false) {
+                if (location1 != null) {
+                    location1+=recordText;
+                    sendSMS("01047199044", location1);
+                } else {
+                    location_check+=recordText;
+                    sendSMS("01047199044", location_check);
+                }
+            }
 
             Calendar c = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -250,7 +258,6 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         //메시지 전송 시작
-        sms_send = (Button) findViewById(R.id.btn911);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Criteria c = new Criteria();
@@ -268,9 +275,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         listener = new LocationListener() {
+
             @Override
             public void onLocationChanged(Location location) {
-                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "\n" + getAddress(location.getLatitude(), location.getLongitude()) + "\n조난당하였습니다 도와주세요";
+                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "\n" + getAddress(location.getLatitude(), location.getLongitude()) + "\n";
             }
 
             @Override
@@ -289,7 +297,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         };
-
 
         enable_buttons();
         //메시지전송끝
@@ -500,6 +507,7 @@ public class MainActivity extends AppCompatActivity {
 
     //이 아래로는 gps메시지 전송 코드
     void enable_buttons() {
+
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.INTERNET}
@@ -509,21 +517,10 @@ public class MainActivity extends AppCompatActivity {
         }
         locationManager.requestLocationUpdates("gps", 5000, 0, listener);
 
-        sms_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if (location1 != null) {
+            location_check = location1;
+        }
 
-                if(location1!= null)
-                {
-                    location_check = location1;
-                    sendSMS("01050411987", location1);
-                }
-                else
-                {
-                    sendSMS("01050411987", location_check);
-                }
-            }
-        });
     }
 
     //여기서 미리 사용자에게 요청했던 값을 반환하여 허락이면 그대로 실행 아니면 다시 허락요청
