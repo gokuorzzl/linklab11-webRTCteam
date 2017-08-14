@@ -30,13 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager, mLayoutManager2;
     private Vibrator vibe;
 
-    EditText etText, etText2;
+    EditText etText;
+//    EditText etText2;
     Button btnSend, btnSend2, btnStartCh, cancelVibe;
 
 
     FirebaseDatabase database;
     List<RecordingMessage> mRecordingMessage;
-    List<RecordingMessage2> mRecordingMessage2;
+    List<AlertMessage> mAlertMessage;
 
     boolean isChannelStarted = false;       // send 버튼을 누를 때의 시점과 onChildAdded가 호출되는 시점이 일치하지가 않아 순차적 실행을 하기 위한 flag
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         btnStartCh = (Button) findViewById(R.id.btnStartChannel);
         cancelVibe = (Button) findViewById(R.id.cancelVibe);
 
-        etText2 = (EditText) findViewById(R.id.etText2); // Layout의 id와 연결
+//        etText2 = (EditText) findViewById(R.id.etText2); // Layout의 id와 연결
         btnSend2 = (Button) findViewById(R.id.btnSend2);
 
         btnSend.setOnClickListener(new View.OnClickListener(){
@@ -76,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
 
         btnSend2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String stText = etText2.getText().toString();
+                String alText = "긴급호출";
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String formattedDate = df.format(c.getTime());
-                DatabaseReference myRef = database.getReference("Recording Message2").child(formattedDate);  // child: Real Database 내에서 하위 디렉토리 추가
-                Hashtable<String, String> recordMessage2 = new Hashtable<String, String>();       // 여러 개의 값을 테이블로 저장할 경우 대비
-                recordMessage2.put("recordText", stText);      // "recordText"는 키 값으로 Recording Message 클래스의 recordText 변수와 일치해야 오류없이 정상적으로 작동
-                myRef.setValue(recordMessage2);                       // 참조한 데이터베이스에 값을 저장한다.
+                DatabaseReference myRef = database.getReference("Alert Message").child(formattedDate);  // child: Real Database 내에서 하위 디렉토리 추가
+                Hashtable<String, String> alertMessage = new Hashtable<String, String>();       // 여러 개의 값을 테이블로 저장할 경우 대비
+                alertMessage.put("alertText", alText);      // "alertText"는 키 값으로 Alert Message 클래스의 alertText 변수와 일치해야 오류없이 정상적으로 작동
+                myRef.setValue(alertMessage);                       // 참조한 데이터베이스에 값을 저장한다.
 
                 //Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
             }
@@ -110,15 +111,15 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MyAdapter(mRecordingMessage);    // Adapter와 List 연동
         mRecyclerView.setAdapter(mAdapter);             // RecylerView에 Adapter 설정
 
-        mRecyclerView2 = (RecyclerView) findViewById(R.id.my_recycler_view2);
-        mRecyclerView2.setHasFixedSize(true);
-        mLayoutManager2 = new LinearLayoutManager(this);
-        mRecyclerView2.setLayoutManager(mLayoutManager2);         // RecyclerView의 id, layout, size 설정
+//        mRecyclerView2 = (RecyclerView) findViewById(R.id.my_recycler_view2);
+//        mRecyclerView2.setHasFixedSize(true);
+//        mLayoutManager2 = new LinearLayoutManager(this);
+//        mRecyclerView2.setLayoutManager(mLayoutManager2);         // RecyclerView의 id, layout, size 설정
 
-        // 긴급알람
-        mRecordingMessage2 = new ArrayList<>();
-        mAdapter2 = new MyAdapter2(mRecordingMessage2);
-        mRecyclerView2.setAdapter(mAdapter2);
+//        // 긴급알람
+//        mAlertMessage = new ArrayList<>();
+//        mAdapter2 = new MyAdapter2(mAlertMessage);
+//        mRecyclerView2.setAdapter(mAdapter2);
 
         DatabaseReference chatDBref = database.getReference("Recording Message");
         chatDBref.addChildEventListener(new ChildEventListener() {
@@ -128,16 +129,8 @@ public class MainActivity extends AppCompatActivity {
                 mRecordingMessage.add(message); // 불러온 메시지를 List에 순차적으로 추가
                 mAdapter.notifyItemInserted(mRecordingMessage.size() - 1 );
 
-                // 진동세기 표시는 따로없기때문에, 보통 패턴을 이용하여 진동세기를 표현한다.
-                // LG나 삼성폰의 경우는 따로 API를 이용하는 것 같다고 함.
-                vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
-                long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
-                //홀수 : 진동시간,  짝수 : 대기시간,
-
                 if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
                     Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
-                    vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
                 }
             }
 
@@ -155,25 +148,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 긴급호출DB내용 불러오기
-        DatabaseReference chatDBref2 = database.getReference("Recording Message2");
+        DatabaseReference chatDBref2 = database.getReference("Alert Message");
         chatDBref2.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                RecordingMessage2 message = dataSnapshot.getValue(RecordingMessage2.class); // Database에 있는 data를 불러옴
-                mRecordingMessage2.add(message); // 불러온 메시지를 List에 순차적으로 추가
-                mAdapter2.notifyItemInserted(mRecordingMessage.size() - 1 );
+//                AlertMessage message = dataSnapshot.getValue(AlertMessage.class); // Database에 있는 data를 불러옴
+//                mAlertMessage.add(message); // 불러온 메시지를 List에 순차적으로 추가
+//                mAdapter2.notifyItemInserted(mAlertMessage.size() - 1 );
 
                 // 진동세기 표시는 따로없기때문에, 보통 패턴을 이용하여 진동세기를 표현한다.
                 // LG나 삼성폰의 경우는 따로 API를 이용하는 것 같다고 함.
                 vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                Toast.makeText(MainActivity.this, mRecordingMessage2.get(mRecordingMessage2.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, mAlertMessage.get(mAlertMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
                 long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
-                //홀수 : 진동시간,  짝수 : 대기시간,
+                //홀수 : 진동시간,  짝수 : 대기시간
+                Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
+                vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
 
-                if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
-                    Toast.makeText(MainActivity.this, mRecordingMessage2.get(mRecordingMessage2.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
+                /*if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
+                    Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
                     vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
-                }
+                }*/
             }
 
             @Override

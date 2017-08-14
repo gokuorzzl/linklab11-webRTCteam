@@ -1,8 +1,5 @@
 package com.linklab11.ms91.firebase_test;
 
-/**
- * Created by User on 2017-07-24.
- */
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -69,16 +69,20 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     //gps문자전송
-    private Button sms_send;
     private LocationManager locationManager;
     private LocationListener listener;
     private String address_1= null;
     private String location1 = null;
     private String location_check = null;
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView mRecyclerView, mRecyclerView2;
+    private RecyclerView.Adapter mAdapter, mAdapter2;
+    private RecyclerView.LayoutManager mLayoutManager, mLayouManager2;
+
+    // 명상 : 긴급호출
+    private Vibrator vibe;
+    Button btnSend2, cancelVibe;
+
 
     private static final String API_KEY = "AIzaSyBtSgSJHX8rqviGq7NNMNe63Cng0w_LJXY";
 
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     List<RecordingMessage> mRecordingMessage;
 
     TextToSpeech translatedTTS;
-    Vibrator vib;
+//    Vibrator vib;
 
     String recordLanguage = "ko-KR", translateLanguage = "en", TTSLanguage = "ENGLISH";
     String recordText = "", translationText;
@@ -187,6 +191,15 @@ public class MainActivity extends AppCompatActivity {
             mResult.toArray(rs);
             recordTextView.setText("" + rs[0]);
             recordText = "" + rs[0];
+            if(recordText.contains("119")!= false) {
+                if (location1 != null) {
+                    location1+=recordText;
+                    sendSMS("01047199044", location1);
+                } else {
+                    location_check+=recordText;
+                    sendSMS("01047199044", location_check);
+                }
+            }
 
             Calendar c = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -224,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
         btnRecordLanguage = (Button) findViewById(R.id.btnRecordLanguage);
         btnTranlateLanguage = (Button) findViewById(R.id.btnTranslateLanguage);
         btnStartCh = (Button) findViewById(R.id.btnStartChannel);
-        vib = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        vibe = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         btnStartCh.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -250,7 +263,6 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         //메시지 전송 시작
-        sms_send = (Button) findViewById(R.id.btn911);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Criteria c = new Criteria();
@@ -268,9 +280,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         listener = new LocationListener() {
+
             @Override
             public void onLocationChanged(Location location) {
-                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "\n" + getAddress(location.getLatitude(), location.getLongitude()) + "\n조난당하였습니다 도와주세요";
+                location1="좌표 " + location.getLongitude() + " " + location.getLatitude() + "\n" + getAddress(location.getLatitude(), location.getLongitude()) + "\n";
             }
 
             @Override
@@ -290,7 +303,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
         enable_buttons();
         //메시지전송끝
 
@@ -303,6 +315,8 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MyAdapter(mRecordingMessage);    // Adapter와 List 연동
         mRecyclerView.setAdapter(mAdapter);             // RecylerView에 Adapter 설정
 
+
+        // 민영
         DatabaseReference chatDBref = database.getReference("Recording Message");
         chatDBref.addChildEventListener(new ChildEventListener() {
                         @Override
@@ -342,6 +356,81 @@ public class MainActivity extends AppCompatActivity {
                     });
 
         requestRuntimePermission();
+
+        // 명상 : 긴급호출 버튼 layout id 연결
+        btnSend2 = (Button) findViewById(R.id.btnSend2);
+        cancelVibe = (Button) findViewById(R.id.cancelVibe);
+
+        btnSend2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                String alText = "긴급호출";
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String formattedDate = df.format(c.getTime());
+                DatabaseReference myRef = database.getReference("Alert Message").child(formattedDate);  // child: Real Database 내에서 하위 디렉토리 추가
+                Hashtable<String, String> alertMessage = new Hashtable<String, String>();       // 여러 개의 값을 테이블로 저장할 경우 대비
+                alertMessage.put("alertText", alText);      // "alertText"는 키 값으로 Alert Message 클래스의 alertText 변수와 일치해야 오류없이 정상적으로 작동
+                myRef.setValue(alertMessage);                       // 참조한 데이터베이스에 값을 저장한다.
+
+                //Toast.makeText(MainActivity.this, mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        cancelVibe.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   // 패턴 진동을 취소
+                vibe.cancel();
+            }
+        });
+
+        //혹시몰라 데이터값을 실제로 넘겨주는게 필요할시 넣을 코드
+
+//        mRecyclerView2 = (RecyclerView) findViewById(R.id.my_recycler_view2);
+//        mRecyclerView2.setHasFixedSize(true);
+//        mLayoutManager2 = new LinearLayoutManager(this);
+//        mRecyclerView2.setLayoutManager(mLayoutManager2);         // RecyclerView의 id, layout, size 설정
+
+//        // 긴급알람
+//        mAlertMessage = new ArrayList<>();
+//        mAdapter2 = new MyAdapter2(mAlertMessage);
+//        mRecyclerView2.setAdapter(mAdapter2);
+
+        // 긴급호출DB내용 불러오기
+        DatabaseReference chatDBref2 = database.getReference("Alert Message");
+        chatDBref2.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//                AlertMessage message = dataSnapshot.getValue(AlertMessage.class); // Database에 있는 data를 불러옴
+//                mAlertMessage.add(message); // 불러온 메시지를 List에 순차적으로 추가
+//                mAdapter2.notifyItemInserted(mAlertMessage.size() - 1 );
+
+                // 진동세기 표시는 따로없기때문에, 보통 패턴을 이용하여 진동세기를 표현한다.
+                // LG나 삼성폰의 경우는 따로 API를 이용하는 것 같다고 함.
+                vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//                Toast.makeText(MainActivity.this, mAlertMessage.get(mAlertMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
+                long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
+                //홀수 : 진동시간,  짝수 : 대기시간
+                Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
+                vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
+
+                /*if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
+                    Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
+                    vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
+                }*/
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
+
     }
 
     public void onClick (View view) {
@@ -500,6 +589,7 @@ public class MainActivity extends AppCompatActivity {
 
     //이 아래로는 gps메시지 전송 코드
     void enable_buttons() {
+
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.INTERNET}
@@ -509,21 +599,10 @@ public class MainActivity extends AppCompatActivity {
         }
         locationManager.requestLocationUpdates("gps", 5000, 0, listener);
 
-        sms_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if (location1 != null) {
+            location_check = location1;
+        }
 
-                if(location1!= null)
-                {
-                    location_check = location1;
-                    sendSMS("01050411987", location1);
-                }
-                else
-                {
-                    sendSMS("01050411987", location_check);
-                }
-            }
-        });
     }
 
     //여기서 미리 사용자에게 요청했던 값을 반환하여 허락이면 그대로 실행 아니면 다시 허락요청
