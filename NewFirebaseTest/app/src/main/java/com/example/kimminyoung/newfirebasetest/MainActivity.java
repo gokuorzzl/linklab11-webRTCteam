@@ -409,13 +409,13 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, mAlertMessage.get(mAlertMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
                 long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
                 //홀수 : 진동시간,  짝수 : 대기시간
-                Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
-                vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
+//                Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
+//                vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
 
-                /*if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
+                if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
                     Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
                     vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
-                }*/
+                }
             }
 
             @Override
