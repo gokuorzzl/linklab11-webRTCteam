@@ -365,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 String alText = "긴급호출";
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 String formattedDate = df.format(c.getTime());
                 DatabaseReference myRef = database.getReference("Alert Message").child(formattedDate);  // child: Real Database 내에서 하위 디렉토리 추가
                 Hashtable<String, String> alertMessage = new Hashtable<String, String>();       // 여러 개의 값을 테이블로 저장할 경우 대비
@@ -397,26 +397,26 @@ public class MainActivity extends AppCompatActivity {
         // 긴급호출DB내용 불러오기
         DatabaseReference chatDBref2 = database.getReference("Alert Message");
         chatDBref2.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 //                AlertMessage message = dataSnapshot.getValue(AlertMessage.class); // Database에 있는 data를 불러옴
 //                mAlertMessage.add(message); // 불러온 메시지를 List에 순차적으로 추가
 //                mAdapter2.notifyItemInserted(mAlertMessage.size() - 1 );
 
-                // 진동세기 표시는 따로없기때문에, 보통 패턴을 이용하여 진동세기를 표현한다.
-                // LG나 삼성폰의 경우는 따로 API를 이용하는 것 같다고 함.
-                vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    // 진동세기 표시는 따로없기때문에, 보통 패턴을 이용하여 진동세기를 표현한다.
+                    // LG나 삼성폰의 경우는 따로 API를 이용하는 것 같다고 함.
+                    vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 //                Toast.makeText(MainActivity.this, mAlertMessage.get(mAlertMessage.size() - 1).getText().toString(), Toast.LENGTH_SHORT).show();
-                long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
-                //홀수 : 진동시간,  짝수 : 대기시간
+                    long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
+                    //홀수 : 진동시간,  짝수 : 대기시간
 //                Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
 //                vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
 
-                if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
-                    Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
-                    vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
+                    if (isChannelStarted == true){      // Send 버튼 클릭 -> onChildAdded가 호출 -> if 문 실행(각자 이 부분 수정 필요)
+                        Toast.makeText(MainActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
+                        vibe.vibrate(pattern, 0); // 0 : 무한반복, -1 반복없음
+                    }
                 }
-            }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
@@ -481,7 +481,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.chinese:
-                            recordLanguage = "zh-CN";
+                            recordLanguage = "cmn-Hans-CN";
                             btnRecordLanguage.setText("송신 언어: 중국어");
                             break;
                     }
