@@ -5,4 +5,10 @@
     <item android:id="@+id/action_settings"
         android:title="@string/language_receiver"
        yourapp:showAsAction="never" />
+
+    <item android:id="@+id/act"
+        android:title="d"/>
+
+    <item android:id="@+id/act2"
+        android:title="d"/>
 </menu>

@@ -232,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
         translatedTTS = new TextToSpeech(this, listenerTTS);
 
         recordTextView = (TextView) findViewById(R.id.txtRecord);
-        btnSend = (Button) findViewById(R.id.btnSend);
         btnRecord = (ImageButton) findViewById(R.id.btnRecord);
         btnRecordLanguage = (Button) findViewById(R.id.btnRecordLanguage);
         btnTranlateLanguage = (Button) findViewById(R.id.btnTranslateLanguage);
