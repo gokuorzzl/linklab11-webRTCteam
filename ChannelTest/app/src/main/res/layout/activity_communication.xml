@@ -6,8 +6,9 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.kimminyoung.channeltest.CommunicationActivity">
-
+    tools:context="com.example.kimminyoung.channeltest.CommunicationActivity"
+    android:background="@drawable/connect"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="370dp"
