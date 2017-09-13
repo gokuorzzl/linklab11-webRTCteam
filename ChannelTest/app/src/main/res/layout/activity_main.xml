@@ -11,14 +11,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="59dp"
         android:gravity="right"
         android:weightSum="1">
 
         <Button
             android:id="@+id/createChannel"
-            android:layout_width="39dp"
-            android:layout_height="29dp"
+            android:layout_width="59dp"
+            android:layout_height="39dp"
             android:layout_weight="0.06"
             android:background="@drawable/colorbutton"
             android:text="채널생성"
@@ -38,18 +38,20 @@
             <TextView
                 android:id="@+id/text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="69dp"
                 android:gravity="center"
                 android:text="Channel List"
-                android:textColor="#F5F5DC"/>
+                android:textColor="#F5F5DC"
+                android:textSize="12pt" />
 
             <ListView
                 android:id="@+id/list"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="317dp"
                 android:layout_above="@+id/layout"
                 android:layout_below="@+id/text"
                 android:divider="#00BFFF" />
+
         </LinearLayout>
     </ScrollView>
 
