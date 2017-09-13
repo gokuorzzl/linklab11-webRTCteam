@@ -9,6 +9,7 @@
     tools:context="com.example.kimminyoung.channeltest.CommunicationActivity"
     android:background="@drawable/connect"
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="370dp"
@@ -26,12 +27,7 @@
             android:orientation="horizontal"
             android:gravity="right">
 
-            <Button
-                android:id="@+id/btnSenderLanguage"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:onClick="onClick"
-                android:text="송진 언어 설정" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -40,12 +36,7 @@
             android:orientation="horizontal"
             android:gravity="right">
 
-            <Button
-                android:id="@+id/btnReceiverLanguage"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:onClick="onClick"
-                android:text="수신 언어 설정" />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,16 +44,7 @@
             android:orientation="horizontal"
             android:gravity="right">
 
-            <Button
-                android:id="@+id/btnCancelVib"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cancel_Vibe" />
-            <Button
-                android:id="@+id/btnSendVib"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alert send" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -80,16 +62,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="147dp"
+            android:layout_width="154dp"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_weight="0.58"
+            android:gravity="center"
+            android:weightSum="1">
+
             <LinearLayout
-                android:layout_width="60dp"
-                android:layout_height="38dp"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn119"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="onClick"
+                    android:src="@drawable/emergence"
+                    android:text="119"
+                    android:scaleType="centerInside"
+                    />
             </LinearLayout>
 
         </LinearLayout>
@@ -102,40 +99,34 @@
                 android:id="@+id/btnRecord"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/record"
                 android:onClick="onClick"
-                android:src="@drawable/recordbutton_stopped" />
+                android:src="@drawable/recordbutton_stopped"
+
+                />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_weight="0.41"
+            android:orientation="vertical"
+            android:weightSum="1">
+
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="38dp"
-                android:layout_gravity="center_horizontal">
-
-                <Button
-                    android:id="@+id/btnReset"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="onClick"
-                    android:text="RESET" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="38dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center_horizontal">
 
                 <Button
                     android:id="@+id/btnSend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:onClick="onClick"
-                    android:text="SEND" />
+                    android:text="긴급호출" />
             </LinearLayout>
         </LinearLayout>
 
