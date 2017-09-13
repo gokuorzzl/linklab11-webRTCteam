@@ -2,18 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:yourapp="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/btnSenderLanguage"
-        android:title="송신언어 설정"
-       android:onClick="onClick" />
+    <item android:id="@+id/setting"
+        android:title="d"/>
+    <item android:id="@+id/setting1"
+        android:title="d"/>
+    <item android:id="@+id/setting2"
+        android:title="d"/>
+    <item android:id="@+id/setting3"
+        android:title="d"/>
 
-    <item android:id="@+id/btnReceiverLanguage"
-        android:title="수신언어 설정"
-        android:onClick="onClick"/>
-
-    <item android:id="@+id/btnSendVib"
-        android:title="진동 설정"/>
-
-    <item android:id="@+id/btnCancelVib"
-        android:title="진동 취소"
-        />
 </menu>
