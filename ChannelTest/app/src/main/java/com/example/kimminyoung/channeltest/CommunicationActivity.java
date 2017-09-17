@@ -169,7 +169,7 @@ public class CommunicationActivity extends AppCompatActivity {
             ArrayList<String> mResult = results.getStringArrayList(key);
             String[] rs = new String[mResult.size()];
 
-            btnRecord.setImageResource(R.drawable.recordbutton_stopped);
+            btnRecord.setImageResource(R.drawable.buttont);
             RECORDING_STATE = false;
 
             mResult.toArray(rs);
@@ -412,7 +412,7 @@ public class CommunicationActivity extends AppCompatActivity {
         if (view.getId() == R.id.btnRecord) {
             if (RECORDING_STATE) {
                 mRecognizer.stopListening();
-                btnRecord.setImageResource(R.drawable.recordbutton_stopped);
+                btnRecord.setImageResource(R.drawable.buttont);
                 RECORDING_STATE = false;
             } else {
                 if (isPermissionRecordAudio == true && isPermissionInternet == true) {
@@ -427,7 +427,7 @@ public class CommunicationActivity extends AppCompatActivity {
                         mRecognizer.setRecognitionListener(listenerSTT);
                         mRecognizer.startListening(recordIntent);
 
-                        btnRecord.setImageResource(R.drawable.recordbutton_doing);
+                        btnRecord.setImageResource(R.drawable.buttontt);
                         RECORDING_STATE = true;
                         EXCEPTION_MYSELF_STATE = true;
                     } else {

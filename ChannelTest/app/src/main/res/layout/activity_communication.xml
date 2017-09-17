@@ -115,7 +115,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/record"
                 android:onClick="onClick"
-                android:src="@drawable/recordbutton_stopped"
+                android:src="@drawable/buttont"
                 android:scaleType="fitCenter"
 
                 />
