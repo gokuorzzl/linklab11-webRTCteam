@@ -429,7 +429,7 @@ public class CommunicationActivity extends AppCompatActivity {
                         mRecognizer.setRecognitionListener(listenerSTT);
                         mRecognizer.startListening(recordIntent);
 
-                        btnRecord.setImageResource(R.drawable.mic);
+                        btnRecord.setImageResource(R.drawable.mic2);
                         RECORDING_STATE = true;
                         EXCEPTION_MYSELF_STATE = true;
                     } else {
@@ -527,8 +527,11 @@ public class CommunicationActivity extends AppCompatActivity {
                 location1+=" 긴급상황입니다";
                 sendSMS("01047199044", location1);
             } else {
-                location_check+=" 긴급상황입니다";
-                sendSMS("01047199044", location_check);
+                if(location_check!=null) {
+                    location1=location_check;
+                    location1+=" 긴급상황입니다";
+                    sendSMS("01047199044", location_check);
+                }
             }
         }
     }
