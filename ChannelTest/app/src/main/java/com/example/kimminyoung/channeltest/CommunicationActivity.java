@@ -217,6 +217,8 @@ public class CommunicationActivity extends AppCompatActivity {
                     translatedTTS.setLanguage(Locale.JAPANESE);
                 else if (TTSLanguage == "CHINESE")
                     translatedTTS.setLanguage(Locale.CHINESE);
+                else if (TTSLanguage == "FRENCH")
+                    translatedTTS.setLanguage(Locale.FRENCH);
             }
         }
     };
@@ -454,7 +456,7 @@ public class CommunicationActivity extends AppCompatActivity {
                             btnSenderLanguage.setText("송신 언어: 영어");
                             break;
 
-                        case R.id.japanish:
+                        case R.id.japanese:
                             senderLanguage = "ja-JP";
                             btnSenderLanguage.setText("송신 언어: 일본어");
                             break;
@@ -462,6 +464,11 @@ public class CommunicationActivity extends AppCompatActivity {
                         case R.id.chinese:
                             senderLanguage = "zh-CN";
                             btnSenderLanguage.setText("송신 언어: 중국어");
+                            break;
+
+                        case R.id.french:
+                            senderLanguage = "fr-FR";
+                            btnSenderLanguage.setText("송신 언어: 프랑스어");
                             break;
                     }
                     return true;
@@ -490,7 +497,7 @@ public class CommunicationActivity extends AppCompatActivity {
                             btnReceiverLanguage.setText("수신언어: 영어");
                             break;
 
-                        case R.id.japanish:
+                        case R.id.japanese:
                             receiverLanguage = "ja";
                             TTSLanguage = "JAPANESE";
                             translatedTTS.setLanguage(Locale.JAPANESE);
@@ -502,6 +509,13 @@ public class CommunicationActivity extends AppCompatActivity {
                             TTSLanguage = "CHINESE";
                             translatedTTS.setLanguage(Locale.CHINESE);
                             btnReceiverLanguage.setText("수신언어: 중국어");
+                            break;
+
+                        case R.id.french:
+                            receiverLanguage = "fr";
+                            TTSLanguage = "FRENCH";
+                            translatedTTS.setLanguage(Locale.FRENCH);
+                            btnReceiverLanguage.setText("수신언어: 프랑스어");
                             break;
                     }
                     return true;

@@ -7,10 +7,41 @@
     <item android:id="@+id/english"
         android:title="영어"/>
 
-    <item android:id="@+id/japanish"
+    <item android:id="@+id/japanese"
         android:title="일본어"/>
 
     <item android:id="@+id/chinese"
         android:title="중국어"/>
+
+    <item android:id="@+id/french"
+        android:title="프랑스어"/>
+
+    <item android:id="@+id/arabic"
+        android:title="아랍어"/>
+
+    <item android:id="@+id/german"
+        android:title="독일어"/>
+
+    <item android:id="@+id/greek"
+        android:title="그리스어"/>
+
+    <item android:id="@+id/hindi"
+        android:title="힌두어"/>
+
+    <item android:id="@+id/portuguese"
+        android:title="포르투갈어"/>
+
+    <item android:id="@+id/serbian"
+        android:title="세르비아어"/>
+
+    <item android:id="@+id/spanish"
+        android:title="스페인어"/>
+
+    <item android:id="@+id/thai"
+        android:title="타이완어"/>
+
+    <item android:id="@+id/turkish"
+        android:title="터키어"/>
+
 
 </menu>
