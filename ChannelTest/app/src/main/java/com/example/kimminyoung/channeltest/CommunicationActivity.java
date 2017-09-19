@@ -508,6 +508,14 @@ public class CommunicationActivity extends AppCompatActivity {
                 }
             });
             languagePopup.show();
+        }else if(view.getId() == R.id.btn119){
+            if (location1 != null) {
+                location1+=" 긴급상황입니다";
+                sendSMS("01047199044", location1);
+            } else {
+                location_check+=" 긴급상황입니다";
+                sendSMS("01047199044", location_check);
+            }
         }
     }
 
