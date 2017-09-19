@@ -80,7 +80,7 @@ public class CommunicationActivity extends AppCompatActivity {
     private Vibrator vibe;
     private String chName;
     private String address_1= null, location1 = null, location_check = null;
-    String senderLanguage = "", receiverLanguage = "", TTSLanguage ="";
+    String senderLanguage = "ko-KR", receiverLanguage = "en", TTSLanguage ="ENGLISH";
     String recordText = "", translationText;
 
     long entranceTime, currentTime;
