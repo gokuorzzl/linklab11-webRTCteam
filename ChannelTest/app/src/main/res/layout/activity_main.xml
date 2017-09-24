@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kimminyoung.channeltest.MainActivity"
-    android:background="@drawable/signalt"
+    android:background="#000000"
     android:weightSum="1"
 
     >
@@ -38,7 +38,7 @@
                 android:layout_height="52dp"
                 android:gravity="center"
                 android:text="Channel List"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="12pt" />
 
             <ListView
@@ -61,8 +61,13 @@
             android:layout_height="wrap_content"
             android:text="채널생성"
             android:textColor="#FFFFFF"
-            android:layout_gravity="center"
-            android:background="@drawable/colorbutton6"/>
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/cancelChannel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="채널삭제"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 
