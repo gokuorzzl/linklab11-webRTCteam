@@ -100,6 +100,7 @@ public class CommunicationActivity extends AppCompatActivity {
 
     boolean EXCEPTION_MYSELF_STATE = false; // 녹음한 본인은 데이터 출력을 수신 받지 않도록 하기 위한 flag
     boolean RECORDING_STATE = false;
+    boolean PAUSE_STATE = false;
 
     private static final String API_KEY = "AIzaSyBtSgSJHX8rqviGq7NNMNe63Cng0w_LJXY";
     final int MY_PERMISSIONS_REQUEST_INTERNET = 1;
@@ -173,7 +174,7 @@ public class CommunicationActivity extends AppCompatActivity {
             RECORDING_STATE = false;
 
             mResult.toArray(rs);
-            recordTextView.setText("" + rs[0]);
+            //recordTextView.setText("" + rs[0]);
             recordText = "" + rs[0];
             if(recordText.contains("119")!= false) {
                 if (location1 != null) {
@@ -234,7 +235,7 @@ public class CommunicationActivity extends AppCompatActivity {
         btnSendVib = (Button) findViewById(R.id.btnSendVib);
         btnSenderLanguage = (Button) findViewById(R.id.btnSenderLanguage);
         btnReceiverLanguage = (Button) findViewById(R.id.btnReceiverLanguage);
-        recordTextView = (TextView) findViewById(R.id.txtRecord);
+        //recordTextView = (TextView) findViewById(R.id.txtRecord);
 
         translatedTTS = new TextToSpeech(this, listenerTTS);
 
@@ -308,6 +309,7 @@ public class CommunicationActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 currentTime = System.currentTimeMillis() / 1000;
+
                 if(currentTime - entranceTime > 10) {
                     RecordingMessage message = dataSnapshot.getValue(RecordingMessage.class); // Database에 있는 data를 불러옴
                     mRecordingMessage.add(message); // 불러온 메시지를 List에 순차적으로 추가
@@ -315,12 +317,16 @@ public class CommunicationActivity extends AppCompatActivity {
 
                     if (EXCEPTION_MYSELF_STATE)
                         EXCEPTION_MYSELF_STATE = false;
+                    else if (PAUSE_STATE) {
+
+                    }
                     else {
                         recordText = mRecordingMessage.get(mRecordingMessage.size() - 1).getText().toString();  // 어느 기기에서 사용해도 가장 최근 인식한 음성데이터를 대상으로 작용
                         asynctask = new MyAsyncTask();
                         asynctask.execute();
                     }
                 }
+
             }
 
             @Override
@@ -410,6 +416,26 @@ public class CommunicationActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        PAUSE_STATE = true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        PAUSE_STATE = false;
+    }
+
     public void onClick (View view)  {
         if (view.getId() == R.id.btnRecord) {
             if (RECORDING_STATE) {
@@ -424,7 +450,7 @@ public class CommunicationActivity extends AppCompatActivity {
                         recordIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());   // 음성 검색의 음성 인식기에 의도에서 사용된 여분의 키(패키지 이름을 왜 받아오는 지 모르겟음)
                         recordIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, senderLanguage);   // 선택 언어 태그
 
-                        recordTextView.setText("");
+                        //recordTextView.setText("");
                         mRecognizer = SpeechRecognizer.createSpeechRecognizer(this); // 객체 생성
                         mRecognizer.setRecognitionListener(listenerSTT);
                         mRecognizer.startListening(recordIntent);
