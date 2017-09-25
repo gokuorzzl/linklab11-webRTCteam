@@ -226,8 +226,6 @@
             android:orientation="vertical"
             android:gravity="right">
 
-
-
             <Button
                 android:id="@+id/btnSendVib"
                 android:layout_width="1dp"

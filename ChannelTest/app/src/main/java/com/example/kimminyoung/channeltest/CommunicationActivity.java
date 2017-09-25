@@ -220,6 +220,8 @@ public class CommunicationActivity extends AppCompatActivity {
                     translatedTTS.setLanguage(Locale.CHINESE);
                 else if (TTSLanguage == "FRENCH")
                     translatedTTS.setLanguage(Locale.FRENCH);
+                else if (TTSLanguage == "GERMAN")
+                    translatedTTS.setLanguage(Locale.GERMAN);
             }
         }
     };
@@ -496,6 +498,11 @@ public class CommunicationActivity extends AppCompatActivity {
                             senderLanguage = "fr-FR";
                             btnSenderLanguage.setText("송신 언어: 프랑스어");
                             break;
+
+                        case R.id.german:
+                            senderLanguage = "de";
+                            btnSenderLanguage.setText("송신 언어: 독일어");
+                            break;
                     }
                     return true;
                 }
@@ -542,6 +549,13 @@ public class CommunicationActivity extends AppCompatActivity {
                             TTSLanguage = "FRENCH";
                             translatedTTS.setLanguage(Locale.FRENCH);
                             btnReceiverLanguage.setText("수신언어: 프랑스어");
+                            break;
+
+                        case R.id.german:
+                            receiverLanguage = "de";
+                            TTSLanguage = "GERMAN";
+                            translatedTTS.setLanguage(Locale.GERMAN);
+                            btnReceiverLanguage.setText("수신언어: 독일어");
                             break;
                     }
                     return true;
