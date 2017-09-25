@@ -38,6 +38,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -76,6 +77,10 @@ public class CommunicationActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private ArrayList<String> message;
+    private ArrayAdapter<String> msgAdapter;
+    private ListView messageView;
 
     private Vibrator vibe;
     private String chName;
@@ -119,6 +124,10 @@ public class CommunicationActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     translationText = translation.getTranslatedText();
+
+                    message.add(translationText);
+                    msgAdapter.notifyDataSetChanged();
+
                     Toast.makeText(CommunicationActivity.this, translationText, Toast.LENGTH_SHORT).show();
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         latestVersionTTS(translationText);
@@ -237,6 +246,7 @@ public class CommunicationActivity extends AppCompatActivity {
         btnSendVib = (Button) findViewById(R.id.btnSendVib);
         btnSenderLanguage = (Button) findViewById(R.id.btnSenderLanguage);
         btnReceiverLanguage = (Button) findViewById(R.id.btnReceiverLanguage);
+        messageView = (ListView) findViewById(R.id.message_listview);
         //recordTextView = (TextView) findViewById(R.id.txtRecord);
 
         translatedTTS = new TextToSpeech(this, listenerTTS);
@@ -261,6 +271,10 @@ public class CommunicationActivity extends AppCompatActivity {
         mRecordingMessage = new ArrayList<>();          // 데이터(메시지)를 담기 위한 ArrayList
         mAdapter = new MyAdapter(mRecordingMessage);    // Adapter와 List 연동
         mRecyclerView.setAdapter(mAdapter);             // RecylerView에 Adapter 설정
+
+        message = new ArrayList<String>();
+        msgAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, message);
+        messageView.setAdapter(msgAdapter);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Criteria c = new Criteria();
@@ -313,12 +327,16 @@ public class CommunicationActivity extends AppCompatActivity {
                 currentTime = System.currentTimeMillis() / 1000;
 
                 if(currentTime - entranceTime > 10) {
-                    RecordingMessage message = dataSnapshot.getValue(RecordingMessage.class); // Database에 있는 data를 불러옴
-                    mRecordingMessage.add(message); // 불러온 메시지를 List에 순차적으로 추가
+                    RecordingMessage rMessage = dataSnapshot.getValue(RecordingMessage.class); // Database에 있는 data를 불러옴
+                    mRecordingMessage.add(rMessage); // 불러온 메시지를 List에 순차적으로 추가
                     mAdapter.notifyItemInserted(mRecordingMessage.size() - 1);
 
-                    if (EXCEPTION_MYSELF_STATE)
+                    if (EXCEPTION_MYSELF_STATE) {
+                        message.add(recordText);
+                        msgAdapter.notifyDataSetChanged();
+
                         EXCEPTION_MYSELF_STATE = false;
+                    }
                     else if (PAUSE_STATE) {
 
                     }

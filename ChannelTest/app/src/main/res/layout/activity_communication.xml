@@ -103,16 +103,24 @@
                     <LinearLayout
                         android:layout_width="20dp"
                         android:layout_height="match_parent"></LinearLayout>
+
                     <LinearLayout
                         android:layout_width="240dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_horizontal"
                         android:background="#FFFFFF"
+                        android:orientation="vertical"
                         >
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/my_recycler_view"
                             android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:scrollbars="vertical"/>
+
+                        <ListView
+                            android:layout_width="match_parent"
                             android:layout_height="140dp"
+                            android:id="@+id/message_listview"
                             android:scrollbars="vertical"/>
 
                     </LinearLayout>
@@ -230,6 +238,7 @@
                 android:id="@+id/btnSendVib"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content" />
+
 
             <Button
                 android:id="@+id/btnCancelVib"
