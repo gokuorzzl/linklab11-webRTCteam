@@ -8,5 +8,5 @@
     android:paddingLeft="6dip"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:textColor="#FFFFFF"
-    android:textSize="11pt"
+    android:textSize="9pt"
     />
