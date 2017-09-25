@@ -91,13 +91,15 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <LinearLayout
+            <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"></LinearLayout>
+                    android:layout_height="20dp">
 
+            </LinearLayout>
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="240dp"
                     android:layout_height="140dp"
+<<<<<<< HEAD
                     android:layout_gravity="center">
 
                     <LinearLayout
@@ -122,16 +124,28 @@
                             android:layout_height="140dp"
                             android:id="@+id/message_listview"
                             android:scrollbars="vertical"/>
+=======
+                    android:layout_gravity="center_horizontal"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+>>>>>>> a87805d09d7ba06d5f02ee58876f10c9a5ae66dc
 
-                    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/my_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:scrollbars="vertical" />
 
-                    <LinearLayout
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"></LinearLayout>
+                    <ListView
+                        android:id="@+id/message_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scrollbars="vertical" />
                 </LinearLayout>
-
-
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -589,6 +589,8 @@ public class CommunicationActivity extends AppCompatActivity {
                     location1=location_check;
                     location1+=" 긴급상황입니다";
                     sendSMS("01047199044", location_check);
+                }else{
+                    Toast.makeText(getBaseContext(), "GPS needed", Toast.LENGTH_SHORT).show();
                 }
             }
         }
