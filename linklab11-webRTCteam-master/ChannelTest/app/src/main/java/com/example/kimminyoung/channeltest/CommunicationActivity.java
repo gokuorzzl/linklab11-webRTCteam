@@ -243,7 +243,7 @@ public class CommunicationActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
         btnRecord = (ImageButton) findViewById(R.id.btnRecord);
         btnCacnelVib = (Button) findViewById(R.id.btnCancelVib);
-        btnSendVib = (Button) findViewById(R.id.btnSendVib);
+        ImageButton btnSendVib = (ImageButton) findViewById(R.id.btnSendVib);
         btnSenderLanguage = (Button) findViewById(R.id.btnSenderLanguage);
         btnReceiverLanguage = (Button) findViewById(R.id.btnReceiverLanguage);
         messageView = (ListView) findViewById(R.id.message_listview);
@@ -378,11 +378,13 @@ public class CommunicationActivity extends AppCompatActivity {
                 currentTime = System.currentTimeMillis() / 1000;
                 if(currentTime - entranceTime > 10) {
                     vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                    long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100};
+                    long[] pattern = {500, 100, 100, 100, 500, 100, 100, 100 };
                     // 홀수 : 진동시간,  짝수 : 대기시간
+                    for(int i=0; i<30; i++){
+                        vibe.vibrate(pattern, -1);
+                    }
                     // 0 : 무한반복, -1 반복없음
                     Toast.makeText(CommunicationActivity.this, "긴급호출", Toast.LENGTH_SHORT).show();
-                    vibe.vibrate(pattern, 0);
                 }
 
             }
@@ -593,6 +595,9 @@ public class CommunicationActivity extends AppCompatActivity {
                     Toast.makeText(getBaseContext(), "GPS needed", Toast.LENGTH_SHORT).show();
                 }
             }
+        }
+        else if(view.getId() == R.id.btnSendVib){
+
         }
     }
 
