@@ -1,0 +1,7 @@
+#Tue Sep 26 10:45:38 KST 2017
+base.0=C\:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_8a5374ae8031bf03bbf8a26c92e005418881d28a
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6283773a87c8f7dbf8c4181a1dbfe3705a470a91\\classes.dex
+base.1=C\:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6283773a87c8f7dbf8c4181a1dbfe3705a470a91
+file.0=C\:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_8a5374ae8031bf03bbf8a26c92e005418881d28a\\classes.dex

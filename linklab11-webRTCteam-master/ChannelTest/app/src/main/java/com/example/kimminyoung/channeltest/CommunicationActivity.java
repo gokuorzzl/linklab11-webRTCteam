@@ -510,7 +510,7 @@ public class CommunicationActivity extends AppCompatActivity {
                             break;
 
                         case R.id.chinese:
-                            senderLanguage = "zh-CN";
+                            senderLanguage = "cmn-Hans-CN";
                             btnSenderLanguage.setText("송신 언어: 중국어");
                             break;
 

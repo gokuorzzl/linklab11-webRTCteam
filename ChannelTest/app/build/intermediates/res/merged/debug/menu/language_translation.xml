@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/korean"
+        android:title="한국어"/>
+
+    <item android:id="@+id/english"
+        android:title="영어"/>
+
+    <item android:id="@+id/japanese"
+        android:title="일본어"/>
+
+    <item android:id="@+id/chinese"
+        android:title="중국어"/>
+
+    <item android:id="@+id/french"
+        android:title="프랑스어"/>
+
+    <item android:id="@+id/german"
+        android:title="독일어"/>
+</menu>

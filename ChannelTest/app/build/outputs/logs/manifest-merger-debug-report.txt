@@ -1,0 +1,247 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:2:1-32:12
+	package
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:3:5-50
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.VIBRATE
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:6:22-63
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:7:22-68
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:8:5-78
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:8:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.SEND_SMS
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:10:5-66
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.RECEIVE_SMS
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:11:5-69
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:11:22-67
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:12:5-74
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:12:22-72
+application
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:14:5-30:19
+MERGED from [com.android.support:design:25.0.1] C:\Users\KimMinYoung\.android\build-cache\4a9b8eb393c8912246ea7cc4e9b0f34b3305a2c2\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\KimMinYoung\.android\build-cache\6db5f92ace5fc37a6f78a541707c41f3dc42bc52\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\KimMinYoung\.android\build-cache\484a027ee16eca644da0ba26f6fead4e7be97943\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\KimMinYoung\.android\build-cache\b496bf23cd6a3fee0ea0bf0a002e08556871e997\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:transition:25.0.1] C:\Users\KimMinYoung\.android\build-cache\2ca48507bb27c0c90fdf4e7d7cedcfa70f57e063\output\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\KimMinYoung\.android\build-cache\03c24f66828913c043daf59beac8339a797fafa0\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7265cab566ba4b3793f5312042b9370ec0cdb22b\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\KimMinYoung\.android\build-cache\47f9b8e7580ba9e2ef3c443692522aeecaf1407e\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\KimMinYoung\.android\build-cache\3153f01c5d583e390e621a0873a6cfa7ea4a58dc\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\KimMinYoung\.android\build-cache\fc41fdf0b5af3c02358243aa5face805e6d5fa4e\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\KimMinYoung\.android\build-cache\b70d505450c199fa68e7413c2f2a4db68ccc7d6f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\KimMinYoung\.android\build-cache\e339f0cf331dd402db4a732323f8bdb21d289567\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\KimMinYoung\.android\build-cache\a759d883d05622624e29893a1f964884f260e172\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\KimMinYoung\.android\build-cache\5ae7e40fafacfe14a0f978504dc7d812671fb514\output\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:17:9-41
+	android:supportsRtl
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:19:9-35
+	android:roundIcon
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:18:9-44
+	android:allowBackup
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:15:9-35
+	android:icon
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:16:9-39
+	android:theme
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:20:9-40
+activity#com.example.kimminyoung.channeltest.MainActivity
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:21:9-27:20
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:21:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:22:13-26:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:23:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:25:27-74
+activity#com.example.kimminyoung.channeltest.CommunicationActivity
+ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:28:9-29:20
+	android:name
+		ADDED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml:28:19-56
+uses-sdk
+INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\KimMinYoung\.android\build-cache\da3b0f8f3a9c5765f7ae0448b534feb9ca264d10\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\KimMinYoung\.android\build-cache\e882f53cdc35fd1c732656d4d490da8b3d4a0e96\output\AndroidManifest.xml:3:5-42
+MERGED from [com.android.support:design:25.0.1] C:\Users\KimMinYoung\.android\build-cache\4a9b8eb393c8912246ea7cc4e9b0f34b3305a2c2\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\KimMinYoung\.android\build-cache\6db5f92ace5fc37a6f78a541707c41f3dc42bc52\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\KimMinYoung\.android\build-cache\484a027ee16eca644da0ba26f6fead4e7be97943\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\KimMinYoung\.android\build-cache\b496bf23cd6a3fee0ea0bf0a002e08556871e997\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:25.0.1] C:\Users\KimMinYoung\.android\build-cache\87b1e2e3087c9fd7c5e757ec035049ec386d6010\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.0.1] C:\Users\KimMinYoung\.android\build-cache\2ca48507bb27c0c90fdf4e7d7cedcfa70f57e063\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\KimMinYoung\.android\build-cache\03c24f66828913c043daf59beac8339a797fafa0\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7265cab566ba4b3793f5312042b9370ec0cdb22b\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\KimMinYoung\.android\build-cache\47f9b8e7580ba9e2ef3c443692522aeecaf1407e\output\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\KimMinYoung\.android\build-cache\3153f01c5d583e390e621a0873a6cfa7ea4a58dc\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\KimMinYoung\.android\build-cache\fc41fdf0b5af3c02358243aa5face805e6d5fa4e\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\KimMinYoung\.android\build-cache\b70d505450c199fa68e7413c2f2a4db68ccc7d6f\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\KimMinYoung\.android\build-cache\e339f0cf331dd402db4a732323f8bdb21d289567\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\KimMinYoung\.android\build-cache\a759d883d05622624e29893a1f964884f260e172\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\KimMinYoung\.android\build-cache\5ae7e40fafacfe14a0f978504dc7d812671fb514\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.0.1] C:\Users\KimMinYoung\.android\build-cache\4a9b8eb393c8912246ea7cc4e9b0f34b3305a2c2\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KimMinYoung\Desktop\Senier Project\github\ChannelTest\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:21:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:27:162-184
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\KimMinYoung\.android\build-cache\3612f68ba0dbdf8b4c18d4b67ba18739fcae412b\output\AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\KimMinYoung\.android\build-cache\94b2ec9e2f994cd3d2aa2c41dbe8e6722d5fe166\output\AndroidManifest.xml:32:16-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:30:9-36:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:31:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:32:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:33:17-85
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:33:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:34:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:34:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:40:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:40:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:40:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:44:9-48:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:44:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:44:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:45:13-47:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:45:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:46:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\KimMinYoung\.android\build-cache\7931d1568549e9df167f97ff456bb69399a49b96\output\AndroidManifest.xml:46:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\KimMinYoung\.android\build-cache\d74948b3942d70f3b44e2f5cdf6ce886a38c3c32\output\AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\KimMinYoung\.android\build-cache\47f9b8e7580ba9e2ef3c443692522aeecaf1407e\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\KimMinYoung\.android\build-cache\47f9b8e7580ba9e2ef3c443692522aeecaf1407e\output\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\KimMinYoung\.android\build-cache\47f9b8e7580ba9e2ef3c443692522aeecaf1407e\output\AndroidManifest.xml:20:20-65
