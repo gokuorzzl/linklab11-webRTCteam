@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\Android\\studentapp\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\KimMinYoung\\.android\\build-cache\\91de88b51fb686aa8ccc55452715934ac39760c9\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\Android\\studentapp\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\KimMinYoung\\.android\\build-cache\\91de88b51fb686aa8ccc55452715934ac39760c9\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\Android\\studentapp\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\KimMinYoung\\.android\\build-cache\\91de88b51fb686aa8ccc55452715934ac39760c9\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\Android\\studentapp\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\KimMinYoung\\.android\\build-cache\\91de88b51fb686aa8ccc55452715934ac39760c9\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

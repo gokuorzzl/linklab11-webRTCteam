@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 48,
+                    "endOffset": 99
+                },
+                "from": {
+                    "file": "C:\\Users\\KimMinYoung\\.android\\build-cache\\6db5f92ace5fc37a6f78a541707c41f3dc42bc52\\output\\res\\values-v18\\values-v18.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 48,
+                        "endOffset": 99
+                    }
+                }
+            }
+        ]
+    }
+]

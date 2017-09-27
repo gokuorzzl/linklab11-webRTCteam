@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navigation.xml",
+        "source": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\src\\main\\res\\menu\\navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\res\\merged\\debug\\menu\\language_record.xml",
+        "source": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\src\\main\\res\\menu\\language_record.xml"
+    },
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\res\\merged\\debug\\menu\\language_translation.xml",
+        "source": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\src\\main\\res\\menu\\language_translation.xml"
+    },
+    {
+        "merged": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "C:\\Users\\KimMinYoung\\Desktop\\Senier Project\\github\\ChannelTest\\app\\src\\main\\res\\menu\\menu_main.xml"
+    }
+]
